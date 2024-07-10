@@ -23,3 +23,17 @@
     #2fd8fe
   );
 }
+
+.gradient_bg {
+  background-image: linear-gradient(
+    to bottom,
+    #000,
+    #200d42 34%,
+    #4f21a1 65%,
+    #a46edb 82%
+  );
+}
+
+.radial_gradient {
+  background-image: radial-gradient(closest-side, #000 82%, #9560eb);
+}
