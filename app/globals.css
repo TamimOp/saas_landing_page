@@ -37,3 +37,10 @@
 .radial_gradient {
   background-image: radial-gradient(closest-side, #000 82%, #9560eb);
 }
+
+.custom_gradient1 {
+  background-image: linear-gradient(to bottom, #000, #5d2cab);
+}
+.custom_gradient2 {
+  background-image: linear-gradient(to bottom, #5d2cab, #000);
+}

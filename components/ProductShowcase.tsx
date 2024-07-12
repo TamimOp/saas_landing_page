@@ -3,7 +3,7 @@ import React from "react";
 
 const ProductShowcase = () => {
   return (
-    <div className="bg-black text-white gradient_bg py-[72px] sm:py-24">
+    <div className="bg-black text-white custom_gradient1 py-[72px] sm:py-24">
       <div className="container items-center">
         <div className="flex flex-col">
           <h2 className="text-center font-bold text-5xl sm:text-6xl tracking-tighter">
