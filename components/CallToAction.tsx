@@ -15,7 +15,7 @@ const CallToAction = () => {
   const translateY = useTransform(scrollYProgress, [0, 1], [40, -40]);
   return (
     <div
-      className="bg-black text-white py-[72px] sm:py-24 text-center"
+      className="bg-black text-white py-[72px] sm:py-24 text-center overflow-hidden"
       ref={containerRef}
     >
       <div className="container max-w-xl relative">
@@ -34,7 +34,7 @@ const CallToAction = () => {
             alt="emojistar"
             width={234}
             height={234}
-            className="absolute -top-[120px] right-[calc(100%+24px)]"
+            className="absolute -top-[50px] right-[calc(100%+24px)]"
           />
         </motion.div>
         <h1 className="font-bold text-5xl sm:text-6xl tracking-tighter">
