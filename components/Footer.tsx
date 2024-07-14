@@ -9,7 +9,7 @@ const Footer = () => {
           <h4 className="text-center">
             @ 2024 Your Company, Inc. All rights reserved
           </h4>
-          <ul className="flex justify-center gap-2.5 ">
+          <ul className="flex justify-center gap-2.5 items-center">
             <li>
               <Image
                 src="/assets/icons/x-social.svg"

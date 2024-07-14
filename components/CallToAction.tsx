@@ -1,24 +1,42 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const CallToAction = () => {
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end end"],
+  });
+
+  const translateY = useTransform(scrollYProgress, [0, 1], [40, -40]);
   return (
-    <div className="bg-black text-white py-[72px] sm:py-24 text-center">
+    <div
+      className="bg-black text-white py-[72px] sm:py-24 text-center"
+      ref={containerRef}
+    >
       <div className="container max-w-xl relative">
-        <Image
-          src="/assets/images/helix2.png"
-          alt="helix"
-          width={263}
-          height={263}
-          className="absolute top-6 left-[calc(100%+36px)]"
-        />
-        <Image
-          src="/assets/images/emojistar.png"
-          alt="emojistar"
-          width={225}
-          height={225}
-          className="absolute -top-[120px] right-[calc(100%+24px)]"
-        />
+        <motion.div style={{ translateY }}>
+          <Image
+            src="/assets/images/helix2.png"
+            alt="helix"
+            width={225}
+            height={225}
+            className="absolute top-2 left-[calc(100%+36px)] hidden md:block"
+          />
+        </motion.div>
+        <motion.div style={{ translateY }}>
+          <Image
+            src="/assets/images/emojistar.png"
+            alt="emojistar"
+            width={234}
+            height={234}
+            className="absolute -top-[120px] right-[calc(100%+24px)]"
+          />
+        </motion.div>
         <h1 className="font-bold text-5xl sm:text-6xl tracking-tighter">
           Get instant access
         </h1>

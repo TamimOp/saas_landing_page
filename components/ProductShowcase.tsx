@@ -1,7 +1,16 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const ProductShowcase = () => {
+  const appImage = useRef<HTMLImageElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: appImage,
+    offset: ["start end", "end end"],
+  });
+  const rotateX = useTransform(scrollYProgress, [0, 1], [15, 0]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
   return (
     <div className="bg-black text-white custom_gradient1 py-[72px] sm:py-24">
       <div className="container items-center">
@@ -16,16 +25,23 @@ const ProductShowcase = () => {
             celebrate your successes, one task at a time.
           </p>
         </div>
-        <div className="mt-14">
+        <motion.div
+          style={{
+            opacity: opacity,
+            rotateX: rotateX,
+            transformPerspective: "800px",
+          }}
+        >
           <Image
             src="/assets/images/app-screen.png"
             alt="appScreen"
             width="0"
             height="0"
             sizes="100vw"
-            className="w-full h-auto"
+            className="w-full h-auto mt-14"
+            ref={appImage}
           />
-        </div>
+        </motion.div>
       </div>
     </div>
   );

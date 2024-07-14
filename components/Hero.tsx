@@ -1,5 +1,7 @@
+"use client";
 import Image from "next/image";
 import React from "react";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   return (
@@ -25,20 +27,34 @@ const Hero = () => {
           <h1 className="text-7xl sm:text-9xl font-bold text-center tracking-tighter">
             One Task <br /> at a Time
           </h1>
-          <Image
-            src="/assets/images/cursor.png"
-            alt="cursor"
-            width={200}
-            height={200}
+          <motion.div
             className="absolute right-[476px] top-[108px] hidden sm:inline"
-          />
-          <Image
-            src="/assets/images/message.png"
-            alt="message"
-            width={200}
-            height={200}
+            drag
+            dragSnapToOrigin
+          >
+            <Image
+              src="/assets/images/cursor.png"
+              alt="cursor"
+              width={200}
+              height={200}
+              className="max-w-none"
+              draggable="false"
+            />
+          </motion.div>
+          <motion.div
             className="absolute top-[56px] left-[498px] hidden sm:inline"
-          />
+            drag
+            dragSnapToOrigin
+          >
+            <Image
+              src="/assets/images/message.png"
+              alt="message"
+              width={200}
+              height={200}
+              className="max-w-none"
+              draggable="false"
+            />
+          </motion.div>
         </div>
         <p className="text-center text-xl mt-8">
           Celebrate the joy of accomplishment with an{" "}

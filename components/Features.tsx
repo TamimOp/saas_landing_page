@@ -1,5 +1,5 @@
-import Image from "next/image";
 import React from "react";
+import Feature from "./Feature";
 
 const features = [
   {
@@ -36,22 +36,8 @@ const Features = () => {
         </div>
         <div className="flex">
           <div className="flex flex-col sm:flex-row mt-16 gap-4">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="flex flex-col border border-white/30 px-5 py-10 text-center rounded-xl sm:flex-1"
-              >
-                <div className="inline-flex justify-center items-center rounded-lg">
-                  <Image
-                    src="/assets/icons/ecosystem.svg"
-                    alt="logoEco"
-                    width={56}
-                    height={56}
-                  />
-                </div>
-                <h3 className="mt-6 font-bold">{feature.title}</h3>
-                <p className="mt-2 text-white/70">{feature.description}</p>
-              </div>
+            {features.map(({ title, description }) => (
+              <Feature title={title} description={description} key={title} />
             ))}
           </div>
         </div>
